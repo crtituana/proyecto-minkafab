@@ -31,11 +31,11 @@ class Customer extends Model
     ];
  public function controller ()
  {
-     return $this->hasMany('App/Controllers');
+     return $this->hasMany('App/Controller');
  }
 
  public function sensor ()
  {
-     return $this->hasOne('App/Sensors');
+     return $this->hasOne('App/Sensor');
  }
 }

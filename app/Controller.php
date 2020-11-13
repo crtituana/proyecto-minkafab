@@ -14,21 +14,21 @@ class Controller extends Model
 
     public function customer()
     {
-        return $this->belongsTo('App\Customers');
+        return $this->belongsTo('App\Customer');
     }
     
     public function sensor()
     {
-        return $this->hasOne('App\Sensors');
+        return $this->hasOne('App\Sensor');
     }
 
     public function actuator()
     {
-        return $this->hasOne('App\Actuators');
+        return $this->hasOne('App\Actuator');
     }
 
     public function model_controller()
     {
-        return $this->belongsTo('App\Model_controllers');
+        return $this->belongsTo('App\Model_controller');
     }
 }

@@ -3,22 +3,22 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 Use Exception;
-use App\Sensors;
+use App\Sensor;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 
-class SensorsController extends Controller
+class SensorController extends Controller
 
 {
-    public function getSensors(Request $request){
-        $sensor = Sensors::get();
+    public function getSensor(Request $request){
+        $sensor = Sensor::get();
         return response()->json($sensor, 200);
     }
-    public function postSensors(Request $request){
+    public function postSensor(Request $request){
         $data = $request->json()->all();
-        $sensor = Sensors::create([
+        $sensor = Sensor::create([
             'name'=> $data['name'],
             'measure'=> $data['measure'],
             'api_key'=> $data['api_key'],
@@ -37,9 +37,9 @@ class SensorsController extends Controller
         ]);
         return response()->json($sensor, 201);
     }
-    public function putSensors(Request $request){
+    public function putSensor(Request $request){
         $data = $request->json()->all();
-        $sensor = Sensors::findOrFail($data['id']);
+        $sensor = Sensor::findOrFail($data['id']);
         $response = $sensor->update([
             'name'=> $data['name'],
             'measure'=> $data['measure'],
@@ -59,9 +59,9 @@ class SensorsController extends Controller
         ]);
         return response()->json($sensor, 201);
     }
-    public function deleteSensors(Request $request){
+    public function deleteSensor(Request $request){
         $data = $request->json()->all();
-        $sensor = Sensors::findOrFail($data['id']);
+        $sensor = Sensor::findOrFail($data['id']);
         $response = $sensor->delete();
         return response()->json($sensor, 201);
     }

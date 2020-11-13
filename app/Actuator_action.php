@@ -16,7 +16,6 @@ class Actuator_action extends Model
 
     public function actuator()
     {
-        return $this->belongsTo('App\Actuators');
+        return $this->belongsTo('App\Actuator');
     }
-
 }

@@ -16,6 +16,6 @@ class Model_controller extends Model
 
   public function controller()
   {
-      return $this->hasOne('App\Controllers');
+      return $this->hasOne('App\Controller');
   }
 }

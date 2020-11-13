@@ -28,17 +28,16 @@ class Sensor extends Model
 
     public function customer()
  {
-     return $this->belongsTo('App/Customers');
+     return $this->belongsTo('App/Customer');
  }
 
  public function controller()
  {
-     return $this->belongsTo('App\Controllers');
+     return $this->belongsTo('App\Controller');
  }
 
  public function sensor_valor()
  {
-     return $this->hasOne('App\Sensor_valors');
+     return $this->hasOne('App\Sensor_valor');
  }
-
 }

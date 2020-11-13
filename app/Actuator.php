@@ -30,11 +30,11 @@ class Actuator extends Model
 
     public function actuator_action()
     {
-        return $this->hasOne('App\Actuator_actions');
+        return $this->hasOne('App\Actuator_action');
     }
 
     public function controller()
     {
-        return $this->belongsTo('App\Controllers');
+        return $this->belongsTo('App\Controller');
     }
 }

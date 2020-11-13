@@ -3,23 +3,23 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 Use Exception;
-use App\Customers;
+use App\Customer;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 
-class CustomersController extends Controller
+class CustomerController extends Controller
 
 {
     
-    public function getCustomers(Request $request){
-        $customer = Customers::get();
+    public function getCustomer(Request $request){
+        $customer = Customer::get();
         return response()->json($customer, 200);
     }
-    public function postCustomers(Request $request){
+    public function postCustomer(Request $request){
         $data = $request->json()->all();
-        $customer = Customers::create([
+        $customer = Customer::create([
             'name'=>$data['name'],
             'email'=>$data['email'],
             'password'=>$data['password'],
@@ -42,9 +42,9 @@ class CustomersController extends Controller
         ]);
         return response()->json($customer, 201);
     }
-    public function putCustomers(Request $request){
+    public function putCustomer(Request $request){
         $data = $request->json()->all();
-        $customer = Customers::findOrFail($data['id']);
+        $customer = Customer::findOrFail($data['id']);
         $response = $customer->update([
             'name'=>$data['name'],
             'email'=>$data['email'],
@@ -68,9 +68,9 @@ class CustomersController extends Controller
         ]);
         return response()->json($customer, 201);
     }
-    public function deleteCustomers(Request $request){
+    public function deleteCustomer(Request $request){
         $data = $request->json()->all();
-        $customer = Customers::findOrFail($data['id']);
+        $customer = Customer::findOrFail($data['id']);
         $response = $customer->delete();
         return response()->json($customer, 201);
     }

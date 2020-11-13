@@ -20,43 +20,43 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // ---------------------------------------- //
 
 //CRUD customer
-Route::get('/customer', 'CustomersController@getCustomers');
-Route::post('/customer', 'CustomersController@postCustomers');
-Route::put('/customer', 'CustomersController@putCustomers');
-Route::delete('/customer', 'CustomersController@deleteCustomers');
+Route::get('/customer', 'CustomerController@getCustomer');
+Route::post('/customer', 'CustomerController@postCustomer');
+Route::put('/customer', 'CustomerController@putCustomer');
+Route::delete('/customer', 'CustomerController@deleteCustomer');
 
 //CRUD sensor
-Route::get('/sensor', 'SensorsController@getSensors');
-Route::post('/sensor', 'SensorsController@postSensors');
-Route::put('/sensor', 'SensorsController@putSensors');
-Route::delete('/sensor', 'SensorsController@deleteSensors');
+Route::get('/sensor', 'SensorController@getSensor');
+Route::post('/sensor', 'SensorController@postSensor');
+Route::put('/sensor', 'SensorController@putSensor');
+Route::delete('/sensor', 'SensorController@deleteSensor');
 
 //CRUD Model_controller
-Route::get('/model_controller', 'Model_controllersController@getModel_controllers');
-Route::post('/model_controller', 'Model_controllersController@postModel_controllers');
-Route::put('/model_controller', 'Model_controllersController@putModel_controllers');
-Route::delete('/model_controller', 'Model_controllersController@deleteModel_controllers');
+Route::get('/model_controller', 'Model_controllerController@getModel_controller');
+Route::post('/model_controller', 'Model_controllerController@postModel_controller');
+Route::put('/model_controller', 'Model_controllerController@putModel_controller');
+Route::delete('/model_controller', 'Model_controllerController@deleteModel_controller');
 
 //CRUD sensor_valor
-Route::get('/sensor_valor', 'Sensor_valorsController@getSensor_valors');
-Route::post('/sensor_valor', 'Sensor_valorsController@postSensor_valors');
-Route::put('/sensor_valor', 'Sensor_valorsController@putSensor_valors');
-Route::delete('/sensor_valor', 'Sensor_valorsController@deleteSensor_valors');
+Route::get('/sensor_valor', 'Sensor_valorController@getSensor_valor');
+Route::post('/sensor_valor', 'Sensor_valorController@postSensor_valor');
+Route::put('/sensor_valor', 'Sensor_valorController@putSensor_valor');
+Route::delete('/sensor_valor', 'Sensor_valorController@deleteSensor_valor');
 
 //CRUD controller
-Route::get('/controller', 'ControllersController@getControllers');
-Route::post('/controller', 'ControllersController@postControllers');
-Route::put('/controller', 'ControllersController@putControllers');
-Route::delete('/controller', 'ControllersController@deleteControllers');
+Route::get('/controller', 'ControllerController@getController');
+Route::post('/controller', 'ControllerController@postController');
+Route::put('/controller', 'ControllerController@putController');
+Route::delete('/controller', 'ControllerController@deleteController');
 
 //CRUD actuator_action
-Route::get('/actuator_action', 'Actuator_actionsController@getactuator_actions');
-Route::post('/actuator_action', 'Actuator_actionsController@postactuator_actions');
-Route::put('/actuator_action', 'Actuator_actionsController@putActuator_actions');
-Route::delete('/actuator_action', 'Actuator_actionsController@deleteActuator_actions');
+Route::get('/actuator_action', 'Actuator_actionController@getActuator_action');
+Route::post('/actuator_action', 'Actuator_actionController@postActuator_action');
+Route::put('/actuator_action', 'Actuator_actionController@putActuator_action');
+Route::delete('/actuator_action', 'Actuator_actionController@deleteActuator_action');
 
 //CRUD actuator
-Route::get('/actuator', 'ActuatorsController@getActuators');
-Route::post('/actuator', 'ActuatorsController@postActuators');
-Route::put('/actuator', 'ActuatorsController@putActuators');
-Route::delete('/actuator', 'ActuatorsController@deleteActuators');
+Route::get('/actuator', 'ActuatorController@getActuator');
+Route::post('/actuator', 'ActuatorController@postActuator');
+Route::put('/actuator', 'ActuatorController@putActuator');
+Route::delete('/actuator', 'ActuatorController@deleteActuator');
