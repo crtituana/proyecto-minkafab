@@ -12,10 +12,12 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 class Model_controllerController extends Controller
 
 {
+    /*crud para tarer model-controller*/
     public function getModel_controller(Request $request){
         $model_controller = Model_controller::get();
         return response()->json($model_controller, 200);
     }
+    /*crud para crear model-controller*/
     public function postModel_controller(Request $request){
         $data = $request->json()->all();
         $model_controller = Model_controller::create([
@@ -23,6 +25,7 @@ class Model_controllerController extends Controller
         ]);
         return response()->json($model_controller, 201);
     }
+    /*crud para actualizar model-controller*/
     public function putModel_controller(Request $request){
         $data = $request->json()->all();
         $model_controller = Model_controller::findOrFail($data['id']);
@@ -31,6 +34,7 @@ class Model_controllerController extends Controller
         ]);
         return response()->json($model_controller, 201);
     }
+    /*crud para eliminar model-controller*/
     public function deleteModel_controller(Request $request){
         $data = $request->json()->all();
         $model_controller = Model_controller::findOrFail($data['id']);

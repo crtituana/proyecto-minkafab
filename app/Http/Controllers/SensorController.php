@@ -12,10 +12,12 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 class SensorController extends Controller
 
 {
+    /*crud para traer sensor*/
     public function getSensor(Request $request){
         $sensor = Sensor::get();
         return response()->json($sensor, 200);
     }
+     /*crud para crear sensor*/
     public function postSensor(Request $request){
         $data = $request->json()->all();
         $sensor = Sensor::create([
@@ -37,6 +39,7 @@ class SensorController extends Controller
         ]);
         return response()->json($sensor, 201);
     }
+     /*crud para actualizar sensor*/
     public function putSensor(Request $request){
         $data = $request->json()->all();
         $sensor = Sensor::findOrFail($data['id']);
@@ -59,6 +62,7 @@ class SensorController extends Controller
         ]);
         return response()->json($sensor, 201);
     }
+     /*crud para eliminar sensor*/
     public function deleteSensor(Request $request){
         $data = $request->json()->all();
         $sensor = Sensor::findOrFail($data['id']);

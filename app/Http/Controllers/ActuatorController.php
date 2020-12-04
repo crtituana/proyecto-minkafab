@@ -12,10 +12,12 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 class ActuatorController extends Controller
 
 {
+    /*crud para traer actuator*/
     public function getActuator(Request $request){
         $actuator = Actuator::get();
         return response()->json($actuator, 200);
     }
+    /*crud para crear actuator*/
     public function postActuator(Request $request){
         $data = $request->json()->all();
         $actuator = Actuator::create([
@@ -39,6 +41,7 @@ class ActuatorController extends Controller
         ]);
         return response()->json($actuator, 201);
     }
+    /*crud para actualizar actuator*/
     public function putActuator(Request $request){
         $data = $request->json()->all();
         $actuator = Actuator::findOrFail($data['id']);
@@ -63,6 +66,7 @@ class ActuatorController extends Controller
         ]);
         return response()->json($actuator, 201);
     }
+    /*crud para eliminar actuator*/
     public function deleteActuator(Request $request){
         $data = $request->json()->all();
         $actuator = Actuator::findOrFail($data['id']);

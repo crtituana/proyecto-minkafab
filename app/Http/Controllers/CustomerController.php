@@ -12,11 +12,12 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 class CustomerController extends Controller
 
 {
-    
+    /*crud para traer customer*/
     public function getCustomer(Request $request){
         $customer = Customer::get();
         return response()->json($customer, 200);
     }
+    /*crud para crear customer*/
     public function postCustomer(Request $request){
         $data = $request->json()->all();
         $customer = Customer::create([
@@ -42,6 +43,7 @@ class CustomerController extends Controller
         ]);
         return response()->json($customer, 201);
     }
+    /*crud para actualizar customer*/
     public function putCustomer(Request $request){
         $data = $request->json()->all();
         $customer = Customer::findOrFail($data['id']);
@@ -68,6 +70,7 @@ class CustomerController extends Controller
         ]);
         return response()->json($customer, 201);
     }
+    /*crud para eliminar customer*/
     public function deleteCustomer(Request $request){
         $data = $request->json()->all();
         $customer = Customer::findOrFail($data['id']);
